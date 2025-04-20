@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Planner, Mood Board, Pomodoro</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Planner Page -->
+  <div id="plannerPage" class="page">
+    <div class="page-content">
+      <h2>Planner</h2>
+      <input type="text" id="taskInput" placeholder="Enter task" />
+      <button onclick="addTask()">Add Task</button>
+      <ul id="taskList"></ul>
+      <audio id="dingSound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+      <audio id="bellSound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"></audio>
+    </div>
+  </div>
+
+  <!-- Mood Board Page -->
+  <div id="moodBoardPage" class="page">
+    <div class="page-content">
+      <h2>Mood Board</h2>
+      <p id="dateDisplay"></p>
+      <div class="mood-options">
+        <button onclick="setMood('😭')">😭</button>
+        <button onclick="setMood('😔')">😔</button>
+        <button onclick="setMood('😠')">😠</button>
+        <button onclick="setMood('😊')">😊</button>
+        <button onclick="setMood('😮‍💨')">😮‍💨</button>
+      </div>
+      <p id="moodQuote">Select a mood to get a quote 💬</p>
+    </div>
+  </div>
+
+  <!-- Pomodoro Page -->
+  <div id="pomodoroPage" class="page">
+    <div class="page-content">
+      <h2>Pomodoro Timer</h2>
+      <label for="studyDuration">Study Time (mins):</label>
+      <input type="number" id="studyDuration" value="25" min="1"><br>
+      <label for="breakDuration">Break Time (mins):</label>
+      <input type="number" id="breakDuration" value="5" min="1"><br>
+      <div id="timerDisplay">25:00</div>
+      <button onclick="startPomodoro()">Start Study</button>
+      <button onclick="startBreak()">Start Break</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+  </div>
+
+  <!-- Floating Button Navigation -->
+  <div class="floating-buttons">
+    <button onclick="switchPage('planner')">Planner</button>
+    <button onclick="switchPage('moodBoard')">Mood Board</button>
+    <button onclick="switchPage('pomodoro')">Pomodoro</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
